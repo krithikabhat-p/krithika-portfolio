@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KRITHIKA BHAT P | Portfolio</title>
+
+<style>
+
+body{
+font-family: Arial;
+margin:0;
+color:#1f3d3a;
+background: linear-gradient(-45deg,#7fd2d6,#a5778c,#73a3eb,#d285a2);
+background-size:400% 400%;
+animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+header{
+padding:20px;
+font-size:24px;
+font-weight:bold;
+}
+
+.hero{
+padding:60px 20px;
+text-align:center;
+}
+
+.hero h1{
+font-size:42px;
+margin:10px 0;
+}
+
+.hero p{
+font-size:18px;
+color:#3d5552;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+margin:15px;
+border-radius:40px;
+text-decoration:none;
+font-weight:bold;
+}
+
+.primary{
+background:#012321;
+color:white;
+}
+
+.secondary{
+border:2px solid #00c1b7;
+color:#173c3a;
+}
+
+.section{
+padding:60px 20px;
+text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
+}
+
+.section.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.skill{
+padding:12px 25px;
+background:rgb(50, 141, 201);
+border-radius:10px;
+box-shadow:0 2px 8px rgba(57, 11, 11, 0.1);
+}
+
+.projects{
+max-width:600px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:25px;
+margin:20px 0;
+border-radius:15px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+form{
+max-width:500px;
+margin:auto;
+}
+
+input, textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+border-radius:10px;
+border:1px solid #e08888;
+font-size:16px;
+}
+
+button{
+background:#173c3a;
+color:white;
+padding:15px;
+border:none;
+border-radius:40px;
+width:100%;
+font-size:18px;
+cursor:pointer;
+}
+
+a{
+color:#173c3a;
+font-weight:bold;
+text-decoration:none;
+}
+
+.cursor{
+display:inline-block;
+background:#000000;
+width:3px;
+margin-left:5px;
+animation: blink 1s infinite;
+}
+
+@keyframes blink{
+0%{opacity:1;}
+50%{opacity:0;}
+100%{opacity:1;}
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+KB<span style="color:#7aa68d">.</span>
+</header>
+
+<section class="hero">
+
+<p>WELCOME. I AM</p>
+
+<h1>
+<span id="name"></span><span class="cursor"></span>
+</h1>
+
+<p>I am a 1st year BTech student.</p>
+<p1>interested in learning programming languages and building projects</p1>
+<br>
+
+<a class="btn primary" href="#work">See My Work</a>
+<a class="btn secondary" href="#contact">Let's Talk</a>
+
+</section>
+
+<section class="section">
+
+<h2>Core Competencies</h2>
+
+<div class="skills">
+<div class="skill">HTML</div>
+<div class="skill">Java</div>
+<div class="skill">CSS</div>
+<div class="skill">Python</div>
+<div class="skill">C</div>
+</div>
+
+</section>
+
+<section class="section" id="work">
+
+<h2>Selected Works</h2>
+
+<div class="projects">
+
+<div class="card">
+
+<h3>Simple Calculator</h3>
+
+<p>A calculator built using HTML, CSS and JavaScript.</p>
+
+<a href="https://krithikabhat-p.github.io/simple-calculator" target="_blank">
+Open Project →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="section" id="contact">
+
+<h2>Get In Touch</h2>
+
+<p>
+<a href="https://www.linkedin.com/in/krithika-bhat-p" target="_blank">
+Visit My LinkedIn
+</a>
+</p>
+
+<form>
+
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea rows="4" placeholder="How can I help you?"></textarea>
+
+<button>Send Message</button>
+
+</form>
+
+</section>
+
+<script>
+
+/* Typing animation */
+
+const text="KRITHIKA BHAT P";
+let i=0;
+
+function typeWriter(){
+if(i<text.length){
+document.getElementById("name").innerHTML+=text.charAt(i);
+i++;
+setTimeout(typeWriter,100);
+}
+}
+
+typeWriter();
+
+/* Scroll animation */
+
+const sections=document.querySelectorAll(".section");
+
+window.addEventListener("scroll",()=>{
+sections.forEach(sec=>{
+const top=sec.getBoundingClientRect().top;
+if(top<window.innerHeight-100){
+sec.classList.add("show");
+}
+});
+});
+
+</script>
+
+</body>
+</html>
